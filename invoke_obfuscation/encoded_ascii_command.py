@@ -5,6 +5,7 @@ from functools import singledispatch
 
 from invoke_obfuscation import utils
 
+
 class ObfuscatorException(Exception):
     pass
 
@@ -201,11 +202,11 @@ class EncodedAsciiCommand:
     @invoke.register(str)
     def _(arg, base_script_ptn=None, invoke_expression_ptn=None, invoke_ptn=None):
         eac = EncodedAsciiCommand(arg)
-        return eac._invoke(invoke_expression_ptn, invoke_ptn)
+        return eac._invoke(base_script_ptn, invoke_expression_ptn, invoke_ptn)
     
     @invoke.register(Path)
     def _(arg, base_script_ptn=None, invoke_expression_ptn=None, invoke_ptn=None):
         if not arg.exists():
             raise RuntimeError(f'{arg} does not exist.')
         eac = EncodedAsciiCommand(arg.read_text())
-        return eac._invoke(invoke_expression_ptn, invoke_ptn)
+        return eac._invoke(base_script_ptn, invoke_expression_ptn, invoke_ptn)
