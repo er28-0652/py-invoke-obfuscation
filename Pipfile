@@ -7,3 +7,6 @@ verify_ssl = true
 
 [packages]
 click = "*"
+
+[scripts]
+tests = "pytest -v"
