@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/er28-0652/py-invoke-obfuscation/workflows/Main%20workflow/badge.svg)](https://github.com/er28-0652/py-invoke-obfuscation/actions)
+
 # py-invoke-obfuscation
 
 Python implementation of Invoke-Obfuscation for PowerShell.  
